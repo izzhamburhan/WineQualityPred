@@ -2,7 +2,7 @@ name: model-wine-quality
 on: [push]
 jobs:
   train-and-report:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     # optionally use a convenient Ubuntu LTS + DVC + CML container
     container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
