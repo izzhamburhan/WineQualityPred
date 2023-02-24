@@ -2,11 +2,12 @@ name: model-wine-quality
 on: [push]
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     # optionally use a convenient Ubuntu LTS + DVC + CML image
-    container: docker://dvcorg/cml-py3:latest
+    # container: docker://dvcorg/cml-py3:latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v1
       - name: cml_run
         run: |
           # Your ML workflow goes here
